@@ -2,7 +2,7 @@
 using namespace std;
 int coinChange(vector<int>& coins, int amount) {
     if(amount==0) return 0;
-    vector<int>dp(amount+1,10000);
+    vector<int>dp(amount+1,10001);
     dp[0]=0;
     for(int i=1;i<=amount;i++){
         for(int j=0;j<coins.size();j++){
@@ -11,7 +11,7 @@ int coinChange(vector<int>& coins, int amount) {
             }
         }
     }
-    if(dp[amount]==10000) return -1;
+    if(dp[amount]==10001) return -1;
     return dp[amount];
 }
 int main()
