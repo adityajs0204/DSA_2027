@@ -6,8 +6,8 @@
 
 [![GitHub repo](https://img.shields.io/badge/GitHub-DSA__2027-181717?style=for-the-badge&logo=github)](https://github.com/adityajs0204/DSA_2027)
 [![Language](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B)](https://isocpp.org/)
-[![LeetCode](https://img.shields.io/badge/LeetCode-Grinding-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/)
-[![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)](https://github.com/adityajs0204/DSA_2027)
+[![LeetCode](https://img.shields.io/badge/LeetCode-Grinding-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/adityajs_06/)
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)](https://github.com/adityajs0204)
 
 </div>
 
