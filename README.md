@@ -10,13 +10,13 @@
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)](https://github.com/adityajs0204/DSA_2027)
 
 <!-- TOTAL_START -->
-**🧩 Total Problems Solved: 48**
+**🧩 Total Problems Solved: 50**
 <!-- TOTAL_END -->
 
 <br/>
 
 <!-- UPDATED_START -->
-*🤖 Last auto-updated: **February 22, 2026 at 04:52 UTC***
+*🤖 Last auto-updated: **February 24, 2026 at 18:27 UTC***
 <!-- UPDATED_END -->
 
 </div>
@@ -38,10 +38,10 @@ This repository documents my structured preparation for technical interviews and
 <!-- TOPICS_TABLE_START -->
 | # | Topic | Solved | Progress |
 |---|-------|:------:|----------|
-| 1 | 📦 **Array** | 20 | `████████░░░░░░░░░░░░` 20/50 |
+| 1 | 📦 **Array** | 21 | `████████░░░░░░░░░░░░` 21/50 |
 | 2 | 🔤 **String** | 7 | `████░░░░░░░░░░░░░░░░` 7/40 |
 | 3 | 🧮 **Math** | 7 | `█████░░░░░░░░░░░░░░░` 7/30 |
-| 4 | 🧠 **Dynamic Programming** | 5 | `██░░░░░░░░░░░░░░░░░░` 5/40 |
+| 4 | 🧠 **Dynamic Programming** | 6 | `███░░░░░░░░░░░░░░░░░` 6/40 |
 | 5 | 🌲 **Tree** | 2 | `█░░░░░░░░░░░░░░░░░░░` 2/40 |
 | 6 | 🔗 **Linked List** | 3 | `██░░░░░░░░░░░░░░░░░░` 3/30 |
 | 7 | 🗃️ **Hash Map** | 2 | `██░░░░░░░░░░░░░░░░░░` 2/25 |
@@ -55,10 +55,10 @@ This repository documents my structured preparation for technical interviews and
 
 <!-- PROGRESS_START -->
 ```
-Array                 ████████░░░░░░░░░░░░  20/50
+Array                 ████████░░░░░░░░░░░░  21/50
 String                ████░░░░░░░░░░░░░░░░  7/40
 Math                  █████░░░░░░░░░░░░░░░  7/30
-Dynamic Programming   ██░░░░░░░░░░░░░░░░░░  5/40
+Dynamic Programming   ███░░░░░░░░░░░░░░░░░  6/40
 Tree                  █░░░░░░░░░░░░░░░░░░░  2/40
 Linked List           ██░░░░░░░░░░░░░░░░░░  3/30
 Hash Map              ██░░░░░░░░░░░░░░░░░░  2/25
