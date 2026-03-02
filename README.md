@@ -10,13 +10,13 @@
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)](https://github.com/adityajs0204/DSA_2027)
 
 <!-- TOTAL_START -->
-**🧩 Total Problems Solved: 50**
+**🧩 Total Problems Solved: 51**
 <!-- TOTAL_END -->
 
 <br/>
 
 <!-- UPDATED_START -->
-*🤖 Last auto-updated: **February 24, 2026 at 18:27 UTC***
+*🤖 Last auto-updated: **March 02, 2026 at 20:37 UTC***
 <!-- UPDATED_END -->
 
 </div>
@@ -38,7 +38,7 @@ This repository documents my structured preparation for technical interviews and
 <!-- TOPICS_TABLE_START -->
 | # | Topic | Solved | Progress |
 |---|-------|:------:|----------|
-| 1 | 📦 **Array** | 21 | `████████░░░░░░░░░░░░` 21/50 |
+| 1 | 📦 **Array** | 22 | `█████████░░░░░░░░░░░` 22/50 |
 | 2 | 🔤 **String** | 7 | `████░░░░░░░░░░░░░░░░` 7/40 |
 | 3 | 🧮 **Math** | 7 | `█████░░░░░░░░░░░░░░░` 7/30 |
 | 4 | 🧠 **Dynamic Programming** | 6 | `███░░░░░░░░░░░░░░░░░` 6/40 |
@@ -55,7 +55,7 @@ This repository documents my structured preparation for technical interviews and
 
 <!-- PROGRESS_START -->
 ```
-Array                 ████████░░░░░░░░░░░░  21/50
+Array                 █████████░░░░░░░░░░░  22/50
 String                ████░░░░░░░░░░░░░░░░  7/40
 Math                  █████░░░░░░░░░░░░░░░  7/30
 Dynamic Programming   ███░░░░░░░░░░░░░░░░░  6/40
