@@ -110,7 +110,7 @@ git clone https://github.com/adityajs0204/DSA_2027.git
 cd DSA_2027/Array
 
 # Compile and run
-g++ -o output Kadane_Algo.cpp
+g++ -o output file_name.cpp
 ./output
 ```
 
