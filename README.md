@@ -147,6 +147,18 @@ No manual editing needed. Just push your solution and the README updates itself!
 
 ---
 
+## 👀 Who Visited My Profile
+
+<div align="center">
+
+<!-- TRAFFIC_START -->
+*Traffic data not yet fetched — will update on next push.*
+<!-- TRAFFIC_END -->
+
+</div>
+
+---
+
 ## 📬 Connect With Me
 
 <div align="center">

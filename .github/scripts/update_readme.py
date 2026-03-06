@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """
 Auto-updates README.md with live stats from the repo's .cpp file counts.
+Also fetches GitHub Traffic API data to show visitor breakdown.
 Triggered by GitHub Actions on every push.
 """
 
 import os
 import re
+import json
+import urllib.request
+import urllib.error
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -74,6 +78,69 @@ def build_last_updated() -> str:
     return f"*🤖 Last auto-updated: **{now}***"
 
 
+# ── Traffic API ───────────────────────────────────────────────────────────────
+
+def fetch_traffic(repo: str, token: str) -> dict | None:
+    """Fetch views traffic from GitHub API. Returns parsed JSON or None on failure."""
+    url = f"https://api.github.com/repos/{repo}/traffic/views"
+    req = urllib.request.Request(
+        url,
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            return json.loads(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        print(f"⚠️  Traffic API error {e.code}: {e.reason}")
+        return None
+    except Exception as e:
+        print(f"⚠️  Traffic fetch failed: {e}")
+        return None
+
+
+def build_traffic_section(repo: str, token: str) -> str:
+    """Build a markdown table of daily visitors from the GitHub Traffic API."""
+    if not token:
+        return "*Traffic data unavailable — no GITHUB_TOKEN found.*"
+
+    data = fetch_traffic(repo, token)
+    if not data:
+        return "*Traffic data could not be fetched at this time.*"
+
+    total_views   = data.get("count", 0)
+    total_uniq    = data.get("uniques", 0)
+    views_by_day  = data.get("views", [])
+
+    lines = [
+        f"| 👁️ Total Views (14d) | 👤 Unique Visitors (14d) |",
+        f"|:--------------------:|:------------------------:|",
+        f"| **{total_views}** | **{total_uniq}** |",
+        "",
+        "<details>",
+        "<summary>📅 Daily Breakdown (click to expand)</summary>",
+        "",
+        "| Date | Views | Unique Visitors |",
+        "|------|------:|----------------:|",
+    ]
+
+    for entry in sorted(views_by_day, key=lambda x: x["timestamp"], reverse=True):
+        date  = entry["timestamp"][:10]   # YYYY-MM-DD
+        views = entry["count"]
+        uniq  = entry["uniques"]
+        lines.append(f"| {date} | {views} | {uniq} |")
+
+    lines.append("")
+    lines.append("</details>")
+    lines.append("")
+    lines.append(f"*🕐 Last fetched: {datetime.now(timezone.utc).strftime('%B %d, %Y at %H:%M UTC')}*")
+
+    return "\n".join(lines)
+
+
 # ── Section replacement helper ────────────────────────────────────────────────
 
 def replace_between(text: str, start_marker: str, end_marker: str, new_content: str) -> str:
@@ -94,6 +161,10 @@ def replace_between(text: str, start_marker: str, end_marker: str, new_content: 
 def main():
     print(f"📂 Repo root : {REPO_ROOT}")
     print(f"📄 README    : {README_PATH}\n")
+
+    # GitHub repo & token (injected by Actions)
+    gh_repo  = os.environ.get("GITHUB_REPOSITORY", "adityajs0204/DSA_2027")
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
 
     # Count problems per topic
     stats = {folder: count_cpp(REPO_ROOT / folder) for folder in TOPICS}
@@ -136,6 +207,15 @@ def main():
         "<!-- UPDATED_START -->",
         "<!-- UPDATED_END -->",
         build_last_updated()
+    )
+
+    # 5. Traffic / visitor breakdown
+    print("🌐 Fetching traffic data from GitHub API...")
+    readme = replace_between(
+        readme,
+        "<!-- TRAFFIC_START -->",
+        "<!-- TRAFFIC_END -->",
+        build_traffic_section(gh_repo, gh_token)
     )
 
     README_PATH.write_text(readme, encoding="utf-8")
