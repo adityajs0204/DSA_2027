@@ -10,6 +10,6 @@ int main() {
     string s = "1100011";
     cout << "String: " << s << endl;
     bool result = checkOnesSegment(s);
-    cout << "Is there at most one segment of ones? " << (result ? "Yes" : "No") << endl;
+    cout << "Are there at most one segment of ones? " << (result ? "Yes" : "No") << endl;
     return 0;
 }
