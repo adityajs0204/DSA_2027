@@ -2,13 +2,13 @@
 using namespace std;
 
 int maxSubArray(vector<int>& nums) {
-    int maxSum = nums[0], curr = 0;
+    int maxi = nums[0], curr = 0;
     for (int n : nums) {
         curr += n;
-        maxSum = max(maxSum, curr);
+        maxi = max(maxi, curr);
         if (curr < 0) curr = 0;
     }
-    return maxSum;
+    return maxi;
 }
 int main() {
     vector<int> nums = {2, 3, 5, -2, 7, -4};
