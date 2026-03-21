@@ -16,3 +16,24 @@ ListNode* swapPairs(ListNode* head) {
     q->next = p;
     return q;
 }
+
+void printList(ListNode* head) {
+    ListNode* current = head;
+    while (current != nullptr) {
+        cout << current->val << " ";
+        current = current->next;
+    }
+    cout << endl;
+}
+int main() {
+    ListNode* head = new ListNode(1);
+    head->next = new ListNode(2);
+    head->next->next = new ListNode(3);
+    head->next->next->next = new ListNode(4);
+    cout << "Original List: ";
+    printList(head);
+    ListNode* swappedHead = swapPairs(head);
+    cout << "Swapped List: ";
+    printList(swappedHead);
+    return 0;
+}
