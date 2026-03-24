@@ -28,6 +28,7 @@ TOPICS = {
     "Hash_Map":             {"emoji": "🗃️", "label": "Hash Map",           "max": 25},
     "Greedy":               {"emoji": "🤑", "label": "Greedy",             "max": 25},
     "Bit_Manipulation":     {"emoji": "⚙️", "label": "Bit Manipulation",   "max": 20},
+    "Stacks":               {"emoji": "🧱", "label": "Stacks",             "max": 20}
 }
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
